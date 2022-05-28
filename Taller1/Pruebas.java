@@ -5,11 +5,8 @@
 package Taller1;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
-import java.util.Scanner;
 
 /**
  *
@@ -23,7 +20,6 @@ public class Pruebas {
         int x = 1;
         String name, lastName1, lastName2;
         Date dateBirth;
-        String fechaSinFormat;
         float height;
         int y = 0;
         int c = 0;
@@ -58,7 +54,6 @@ public class Pruebas {
         switch (index) {
             case 1 -> {
                 x = 1;
-                SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy");
                 quantity = Integer.parseInt(in.InputInt("Cuantas personas va ingresar: "));
                 Person vector[] = new Person[quantity];
                 while (x <= quantity) {
