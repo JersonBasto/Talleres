@@ -1,4 +1,4 @@
-#En esta carpeta se encuentra el taller 1 "Taller Practico Manejo de Clases y Objetos en Java" de la cantera nivel 2 de Sofka.
+# En esta carpeta se encuentra el taller 1 "Taller Practico Manejo de Clases y Objetos en Java" de la cantera nivel 2 de Sofka.
 
 Se encuentran 7 clases, 3 de ellas son la clases ya predeterminadas las cuales son Person, Frutas, cuentaBancaria.
 
