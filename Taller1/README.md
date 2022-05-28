@@ -10,4 +10,6 @@ Para poder iniciar la prueba de este taller se debe ejecutar el archivo Pruebas.
 
 # Nota 
 
+En visual Studio Code debe abrirse la carpeta que el taller que seria "Talleres", en NetBeans debe crear un proyecto con el nombre de la carpeta.
+
 El archivo fue creado con el JDK version 17.
