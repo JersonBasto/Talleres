@@ -35,6 +35,7 @@ public class Nave {
         while (continuar) {
             System.out.println("A continuacion de nave a crear: ");
             System.out.println("Nave A: 1");
+            System.out.println(naveAlist);
             System.out.println("Nave B: 2");
             System.out.println("Nave C: 3");
             System.out.println("Nave D: 4");
