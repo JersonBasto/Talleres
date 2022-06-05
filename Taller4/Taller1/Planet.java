@@ -1,6 +1,6 @@
 package Taller4.Taller1;
 
-public class Planet extends SystemPlanet {
+public class Planet extends PlanetarySystem {
     public double density;
     public double dough;
     public double diameter;
@@ -8,8 +8,20 @@ public class Planet extends SystemPlanet {
     public String namePlanet;
     public Integer identifier;
 
-    public Planet(double density, double dough, double diameter, double distanceToSun, String namePlanet,
-            Integer identifier) {
+    public Planet(String namePlanetarySystem, Planets planets, double density, double dough, double diameter,
+            double distanceToSun, String namePlanet, Integer identifier) {
+        super(namePlanetarySystem, planets);
+        this.density = density;
+        this.dough = dough;
+        this.diameter = diameter;
+        this.distanceToSun = distanceToSun;
+        this.namePlanet = namePlanet;
+        this.identifier = identifier;
+    }
+
+    public Planet( double density, double dough, double diameter,
+            double distanceToSun, String namePlanet, Integer identifier) {
+        super(null, null);
         this.density = density;
         this.dough = dough;
         this.diameter = diameter;
