@@ -9,8 +9,9 @@ public class Main {
         Boolean conti = true;
         Double density, dough, diameter, distanceToSun;
         String namePlanet, namePlanetarySystem;
-        Integer cont = 0,cont2=0;
+        Integer cont = 0, cont2 = 0;
         List<Planets> Planets = new ArrayList<>();
+        List<PlanetarySystem> PlanetarySystem = new ArrayList<>();
         Input in = new Input();
 
         while (create == true) {
@@ -30,6 +31,7 @@ public class Main {
                     System.out.println("Tendra que introducir los datos de cada planeta a crear.");
                     namePlanetarySystem = in.strInput("Lo primero sera darle nombre al sistema planetario:");
                     Planets.add(new Planets(cont));
+                    conti = true;
                     while (conti) {
                         namePlanet = in.strInput("Coloque el nombre del planeta");
                         density = in.inputDouble("El valor de la densidad del planeta " + namePlanet + " es:");
@@ -44,14 +46,19 @@ public class Main {
                         conti = Boolean.parseBoolean(in.inputBoolean("Desea continuar?"));
                         cont2++;
                     }
-                    Planets.get(cont).printListPlanets();
+                    System.out.println("##---------------------------------------##");
+                    PlanetarySystem.add(new PlanetarySystem(namePlanetarySystem, Planets.get(cont)));
                     cont++;
                 }
                 case 2 -> {
                     System.out.println("Los sistemas solares creados por ahora son: ");
+                    for (int x = 0; x < PlanetarySystem.size(); x++) {
+                        PlanetarySystem.get(x).printPlanetarySystem(x);
+                    }
+                    
                 }
                 case 0 -> {
-
+                    create = false;
                 }
             }
 
