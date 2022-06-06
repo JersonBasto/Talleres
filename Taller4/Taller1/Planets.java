@@ -52,7 +52,7 @@ public class Planets {
         return planets.get(index).getIdentifier();
     }
 
-    public Double gravitationalForce(String listPlanets) {
+    public Double gravitationalForce(String listPlanets,double distancePlanets) {
         Double gravitationalForce = 0.0;
         String[] planetsId = listPlanets.split(",");
         String planet1 = planetList.get(Integer.parseInt(planetsId[0])).getNamePlanet();
@@ -69,7 +69,7 @@ public class Planets {
                 - planetList.get(Integer.parseInt(planetsId[1])).getDistanceToSun());
         System.out.println("Distancia entre los dos planetas: " + distance);
         double G = 6.61 * Math.pow(10, -11);
-        gravitationalForce = (G * (m1 * m2) / Math.pow(distance, 2));
+        gravitationalForce = (G * (m1 * m2) / Math.pow(distancePlanets, 2));
         return gravitationalForce;
     }
 

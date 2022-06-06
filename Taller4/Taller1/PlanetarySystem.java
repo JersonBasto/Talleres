@@ -36,10 +36,10 @@ public class PlanetarySystem {
         listOfPlanetarySystem.forEach(pl -> System.out.println(cont + " : " + pl));
     }
 
-    public Double gravitationalForce(String listPlanets) {
+    public Double gravitationalForce(String listPlanets, double distancePlanets) {
         gravitationalForce = 0.0;
         this.planetList.values().forEach(pl -> {
-            gravitationalForce = pl.gravitationalForce(listPlanets);
+            gravitationalForce = pl.gravitationalForce(listPlanets,distancePlanets);
         });
         System.out.println("Fuerza Gravitacional: "+gravitationalForce);
         return gravitationalForce;

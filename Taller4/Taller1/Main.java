@@ -42,7 +42,7 @@ public class Main {
                                 Math.pow(10, in.intInput("con 10 a la:"));
                         diameter = in.inputDouble("El valor de diametro del planeta " + namePlanet + " es:") *
                                 Math.pow(10, in.intInput("con 10 a la:"));
-                        distanceToSun = 1000*in.inputDouble(
+                        distanceToSun = 1000 * in.inputDouble(
                                 "El valor de la distancia entre el sol y el planeta  " + namePlanet + " es:") *
                                 Math.pow(10, in.intInput("con 10 a la:"));
 
@@ -66,7 +66,9 @@ public class Main {
                     System.out.println(
                             "Seleccione dos planetas para realizar el calculo de la fuerza gravitacional, separada por (,): ");
                     String listPlanets = sc.nextLine();
-                    PlanetarySystem.get(index).gravitationalForce(listPlanets);
+                    Double distancePlanets = in.inputDouble("Distancia entre los dos planetas en m")
+                            * Math.pow(10, in.intInput(" con 10 a la: "));
+                    PlanetarySystem.get(index).gravitationalForce(listPlanets, distancePlanets);
                 }
                 case 0 -> {
                     create = false;
