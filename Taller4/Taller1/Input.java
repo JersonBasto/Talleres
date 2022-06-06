@@ -78,7 +78,7 @@ public class Input {
         System.out.println(mensaje);
         while(inDouble==0.0){
             str=sc.nextLine();
-            if(!str.matches("[0-9]*.")){
+            if(!str.matches("[0-9]*.[0-9]*")){
                 System.out.println("Coloque un numero para el dato");
                 inDouble=0.0;
             }

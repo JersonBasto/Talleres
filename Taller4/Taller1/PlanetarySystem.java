@@ -7,6 +7,7 @@ import java.util.List;
 public class PlanetarySystem {
     LinkedHashMap<String, Planets> planetList = new LinkedHashMap<>();
     Integer cont = 0;
+    Double gravitationalForce = 0.0;
 
     public PlanetarySystem(String namePlanetarySystem, Planets planets) {
         this.planetList = createSystem(namePlanetarySystem, planets);
@@ -25,7 +26,7 @@ public class PlanetarySystem {
             System.out.println(p);
         });
         this.planetList.values().forEach(s -> {
-            System.out.println(s.printListPlanets());
+            s.printListPlanets();
         });
     }
 
@@ -33,6 +34,15 @@ public class PlanetarySystem {
         List<String> listOfPlanetarySystem = new ArrayList<String>();
         this.planetList.keySet().forEach(p -> listOfPlanetarySystem.add(p));
         listOfPlanetarySystem.forEach(pl -> System.out.println(cont + " : " + pl));
+    }
+
+    public Double gravitationalForce(String listPlanets) {
+        gravitationalForce = 0.0;
+        this.planetList.values().forEach(pl -> {
+            gravitationalForce = pl.gravitationalForce(listPlanets);
+        });
+        System.out.println("Fuerza Gravitacional: "+gravitationalForce);
+        return gravitationalForce;
     }
 
 }

@@ -2,6 +2,7 @@ package Taller4.Taller1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class Main {
         List<Planets> Planets = new ArrayList<>();
         List<PlanetarySystem> PlanetarySystem = new ArrayList<>();
         Input in = new Input();
+        Scanner sc = new Scanner(System.in);
 
         while (create == true) {
 
@@ -34,12 +36,15 @@ public class Main {
                     conti = true;
                     while (conti) {
                         namePlanet = in.strInput("Coloque el nombre del planeta");
-                        density = in.inputDouble("El valor de la densidad del planeta " + namePlanet + " es:");
-                        dough = in.inputDouble("El valor de la masa del planeta " + namePlanet + " es:");
-                        diameter = in.inputDouble("El valor de diametro del planeta " + namePlanet + " es:");
-                        distanceToSun = in
-                                .inputDouble(
-                                        "El valor de la distancia entre el sol y el planeta " + namePlanet + " es:");
+                        density = in.inputDouble("El valor de la densidad del planeta " + namePlanet + " es:")
+                                * Math.pow(10, in.intInput("con 10 a la:"));
+                        dough = in.inputDouble("El valor de la masa del planeta " + namePlanet + " es:") *
+                                Math.pow(10, in.intInput("con 10 a la:"));
+                        diameter = in.inputDouble("El valor de diametro del planeta " + namePlanet + " es:") *
+                                Math.pow(10, in.intInput("con 10 a la:"));
+                        distanceToSun = 1000*in.inputDouble(
+                                "El valor de la distancia entre el sol y el planeta  " + namePlanet + " es:") *
+                                Math.pow(10, in.intInput("con 10 a la:"));
 
                         Planets.get(cont).addPlanet(cont2,
                                 new Planet(density, dough, diameter, distanceToSun, namePlanet, cont2));
@@ -55,7 +60,13 @@ public class Main {
                     for (int x = 0; x < PlanetarySystem.size(); x++) {
                         PlanetarySystem.get(x).printPlanetarySystem(x);
                     }
-                    
+                    index = in.inputIndex("Seleccione el indice del sistema planetario", PlanetarySystem.size());
+                    System.out.println("Este Sistema contiene los siguientes planetas: ");
+                    PlanetarySystem.get(index).printPlanetarySystemWithPlanets();
+                    System.out.println(
+                            "Seleccione dos planetas para realizar el calculo de la fuerza gravitacional, separada por (,): ");
+                    String listPlanets = sc.nextLine();
+                    PlanetarySystem.get(index).gravitationalForce(listPlanets);
                 }
                 case 0 -> {
                     create = false;
