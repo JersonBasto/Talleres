@@ -36,6 +36,7 @@ public class bubble {
             }
 
         }
+        System.out.println("##--------------------------##");
     }
 
 }
