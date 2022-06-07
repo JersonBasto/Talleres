@@ -1,38 +1,24 @@
 package Taller4.Taller4;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class Vehiculo {
-    Integer numberOfPassengers;
-    Boolean crew;
-    Integer numberOfWheels;
+public class vehicle {
+    Integer numberOfPassengers, numberOfWheels, numberOfDoors;
     Date enrollmentDate;
     String displacementMedium;
-    Integer numberOfDoors;
-    Boolean electricMotor;
-    Boolean onGoing;
+    Boolean electricMotor, crew, onGoing;
 
-    public Vehiculo(Integer numberOfPassengers, Boolean crew, Integer numberOfWheels, Date enrollmentDate,
-            String displacementMedium, Integer numberOfDoors, Boolean electricMotor, Boolean onGoing) {
+    
+
+    public vehicle(Integer numberOfPassengers, Integer numberOfWheels, Integer numberOfDoors, Date enrollmentDate,
+            String displacementMedium, Boolean electricMotor, Boolean crew) {
         this.numberOfPassengers = numberOfPassengers;
-        this.crew = crew;
         this.numberOfWheels = numberOfWheels;
+        this.numberOfDoors = numberOfDoors;
         this.enrollmentDate = enrollmentDate;
         this.displacementMedium = displacementMedium;
-        this.numberOfDoors = numberOfDoors;
         this.electricMotor = electricMotor;
-        this.onGoing = onGoing;
-    }
-
-    public Vehiculo(Integer numberOfPassengers, Boolean crew, Integer numberOfWheels, Date enrollmentDate,
-            String displacementMedium, Integer numberOfDoors, Boolean electricMotor) {
-        this.numberOfPassengers = numberOfPassengers;
         this.crew = crew;
-        this.numberOfWheels = numberOfWheels;
-        this.enrollmentDate = enrollmentDate;
-        this.displacementMedium = displacementMedium;
-        this.numberOfDoors = numberOfDoors;
-        this.electricMotor = electricMotor;
         this.onGoing = false;
     }
 
