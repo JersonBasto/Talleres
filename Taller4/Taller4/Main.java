@@ -14,12 +14,12 @@ public class Main {
         Date enrollmentDate;
         String displacementMedium;
         Integer numberOfDoors;
-        Boolean electricMotor;
+        Boolean electricMotor,conti=true;
 
         Input in = new Input();
 
         System.out.println("A continuacion debera ingresar 10 vehiculos,se le pedira datos para cada vehicuo");
-        for (int x = 0; x < 2; x++) {
+        for (int x = 0; x < 10; x++) {
             System.out.println("Vehiculo " + x + " :");
             numberOfPassengers = in.intInput("¿Cuanto pasajeros pueden entrar en el vehiculo?");
             crew = Boolean.parseBoolean(in.inputBoolean("¿Hay personas dentro del vehiculo?"));
@@ -31,16 +31,21 @@ public class Main {
             vehiculos.add(new vehicle(numberOfPassengers, numberOfWheels, numberOfDoors, enrollmentDate,
                     displacementMedium, electricMotor, crew));
         }
-        for (int z = 0; z < vehiculos.size(); z++) {
-            System.out.println(z + " : " + "Vehiculo " + z);
+
+        while (conti) {
+            for (int z = 0; z < vehiculos.size(); z++) {
+                System.out.println(z + " : " + "Vehiculo " + z);
+            }
+            Integer index = in.inputIndex("Seleccione un vehiculo para observar sus datos", 10);
+            System.out.println("El vehiculo admite: " + vehiculos.get(index).getNumberOfPassengers() + " pasajeros");
+            System.out.println("El vehiculo tiene: " + vehiculos.get(index).getNumberOfDoors() + " puertas");
+            System.out.println("El vehiculo cuenta con motor electrico: " + vehiculos.get(index).getElectricMotor());
+            System.out.println("El vehiculo tiene " + vehiculos.get(index).getNumberOfWheels() + " ruedas");
+            System.out.println("El vehiculo fue matriculado en " + vehiculos.get(index).getEnrollmentDate());
+            System.out.println("El vehiculo tiene pasajeros: " + vehiculos.get(index).getCrew());
+            System.out.println("El vehiculo transita por: " + vehiculos.get(index).getDisplacementMedium());
+            conti=Boolean.parseBoolean(in.inputBoolean("Quiere observar mas vehiculos?"));
         }
-        Integer index = in.inputIndex("Seleccione un vehiculo para observar sus datos", 10);
-        System.out.println("El vehiculo admite: " + vehiculos.get(index).getNumberOfPassengers() + " pasajeros");
-        System.out.println("El vehiculo tiene: " + vehiculos.get(index).getNumberOfDoors() + " puertas");
-        System.out.println("El vehiculo cuenta con motor electrico: " + vehiculos.get(index).getElectricMotor());
-        System.out.println("El vehiculo tiene " + vehiculos.get(index).getNumberOfWheels() + " ruedas");
-        System.out.println("El vehiculo fue matriculado en " + vehiculos.get(index).getEnrollmentDate());
-        System.out.println("El vehiculo tiene pasajeros: " + vehiculos.get(index).getCrew());
-        System.out.println("El vehiculo transita por: " + vehiculos.get(index).getDisplacementMedium());
+
     }
 }
