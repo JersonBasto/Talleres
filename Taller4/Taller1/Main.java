@@ -15,7 +15,6 @@ public class Main {
         List<PlanetarySystem> PlanetarySystem = new ArrayList<>();
         Input in = new Input();
         Scanner sc = new Scanner(System.in);
-
         while (create == true) {
 
             System.out.println("##-----------------------------------------##");

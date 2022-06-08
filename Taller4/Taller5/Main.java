@@ -31,6 +31,7 @@ public class Main {
                     conti = false;
                 }
                 case 1 -> {
+                    create=true;
                     while (create) {
                         System.out
                                 .println(

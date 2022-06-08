@@ -31,7 +31,7 @@ public class Main {
             vehiculos.add(new vehicle(numberOfPassengers, numberOfWheels, numberOfDoors, enrollmentDate,
                     displacementMedium, electricMotor, crew));
         }
-
+        conti=true;
         while (conti) {
             for (int z = 0; z < vehiculos.size(); z++) {
                 System.out.println(z + " : " + "Vehiculo " + z);
