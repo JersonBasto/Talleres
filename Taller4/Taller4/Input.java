@@ -101,7 +101,7 @@ public class Input {
         Date dateFormat = null;
         System.out.println(mensaje);
         while (MM == 0) {
-            System.out.println("Ingrese el mes de nacimiento");
+            System.out.println("Ingrese el mes de Matriculacion");
             MM = sc.nextInt();
             if (MM < 0 || MM > 12) {
                 System.out.println("El mes no se puede aceptar");
@@ -109,7 +109,7 @@ public class Input {
             }
         }
         while (dd == 0) {
-            System.out.println("Ingrese el dia de nacimiento");
+            System.out.println("Ingrese el dia de Matriculacion");
             dd = sc.nextInt();
             switch (MM) {
                 case 1 -> {
@@ -187,7 +187,7 @@ public class Input {
             }
         }
         while (YYYY == 0) {
-            System.out.println("Ingrese el año de nacimiento");
+            System.out.println("Ingrese el año de Matriculacion");
             YYYY = sc.nextInt();
             if (YYYY < 1900) {
                 System.out.println("Fecha no valida");
