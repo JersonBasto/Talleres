@@ -1,5 +1,5 @@
 const cool = (req, res) => {
-  res.send("Eres genial");
+  res.render("cool");
 };
 
 module.exports = cool;
