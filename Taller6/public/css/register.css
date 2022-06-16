@@ -1,0 +1,55 @@
+body {
+    background-color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+#container1 {
+    margin: 0 auto;
+    background: rgb(152, 152, 152);
+    background: linear-gradient(234deg, rgba(152, 152, 152, 1) 0%, rgba(255, 255, 255, 1) 98%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px;
+}
+
+#Name {
+    margin: 10px;
+    padding: 5px;
+    font-size: larger;
+}
+
+#Surnames {
+    margin: 10px;
+    padding: 5px;
+    font-size: larger;
+}
+
+#Username {
+    margin: 10px;
+    padding: 5px;
+    font-size: larger;
+}
+
+#Password {
+    margin: 10px;
+    padding: 5px;
+    font-size: larger;
+}
+#ButtonSend{
+    padding: 10px;
+    background-color: rgb(30, 219, 156);
+    border-color: rgb(30, 219, 156);
+    border-radius: 5px;
+    color: white;
+    font-size: 120%;
+}
+#ButtonSend:hover{
+    background-color: rgb(27, 171, 123);
+    border-color: rgb(27, 171, 123);
+    cursor: hand;
+}
+#containerButtons{
+    padding: 10px;
+}

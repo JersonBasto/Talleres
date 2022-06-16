@@ -1,0 +1,37 @@
+body {
+    background-color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+p {
+    font-size: 200%;
+}
+
+#container1 {
+    margin: 0 auto;
+    background: rgb(152, 152, 152);
+    background: linear-gradient(234deg, rgba(152, 152, 152, 1) 0%, rgba(255, 255, 255, 1) 98%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px;
+}
+
+#BtnLogin {
+    font-size: 120%;
+    padding: 10px;
+    border-color: rgb(171, 165, 165);
+    border-radius: 10px;
+}
+
+#BtnRegister {
+    font-size: 120%;
+    padding: 10px;
+    border-color: rgb(171, 165, 165);
+    border-radius: 10px;
+}
+
+#BtnLogin:hover{
+    background-color: aqua;
+}
