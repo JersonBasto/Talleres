@@ -28,7 +28,7 @@ async function enviarDatos(varJson) {
   if (resJson.login) {
     alert(resJson.mensaje);
     localStorage.setItem("token", resJson.token);
-    window.location.replace("/");
+    window.location.replace("./home");
   } else {
     alert(resJson.mensaje);
   }

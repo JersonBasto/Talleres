@@ -1,0 +1,68 @@
+<script defer type="module" src="/javascript/validateData.js"></script>
+<title>
+  {{titulo}}
+</title>
+<div id="containerP">
+    <div id="containerHeader">
+        <h1 id="Bienvenido" style="height: 50%;"> </h1>
+        <button id="logout"> Logout</button>
+    </div>
+    <div id="containerJugadores">
+        <div id="celdaJugador">
+            <span id="spanJugador"> Jugador 1</span>
+            <input id="Jugador1" disabled="true"></input>
+            <span id="spanApuesta"> Apuesta 1</span>
+            <input id="Apuesta1"></input>
+            <button id="selectPlayer1">Seleccionar</button>
+        </div>
+        <div id="celdaJugador">
+            <span id="spanJugador"> Jugador 2</span>
+            <input id="Jugador2"></input>
+            <span id="spanApuesta"> Apuesta 2</span>
+            <input id="Apuesta2"></input>
+            <button id="selectPlayer2">Seleccionar</button>
+        </div>
+        <div id="celdaJugador">
+            <span id="spanJugador"> Jugador 3</span>
+            <input id="Jugador3"></input>
+            <span id="spanApuesta"> Apuesta 3</span>
+            <input id="Apuesta3"></input>
+            <button id="selectPlayer3">Seleccionar</button>
+        </div>
+        <button id="play">Iniciar juego</button>
+        <button id="playAgain" style="visibility: hidden;">Jugar de Nuevo</button>
+    </div>
+    <div id="containerDados">
+        <div id="dado1"></div>
+        <div id="dado2"></div>
+        <button id="playDados"> Tirar Dados</button>
+    </div>
+    <div id="containerPuntuacion">
+        <div id="infoPlayer1">
+            <h5 id="apuestasPlayer1"></h5>
+            <h5 id="saldoPlayer1"></h5>
+            <h5 id="lossesPlayer1"></h5>
+            <h5 id="profitsPlayer1"></h5>
+            
+        </div>
+        <h5 id="pointsPlayer1"></h5>
+        <div id="infoPlayer2">
+            <h5 id="apuestasPlayer2"></h5>
+            <h5 id="saldoPlayer2"></h5>
+            <h5 id="lossesPlayer2"></h5>
+            <h5 id="profitsPlayer2"></h5>
+            
+        </div>
+        <h5 id="pointsPlayer2"></h5>
+        <div id="infoPlayer3">
+            <h5 id="apuestasPlayer3"></h5>
+            <h5 id="saldoPlayer3"></h5>
+            <h5 id="lossesPlayer3"></h5>
+            <h5 id="profitsPlayer3"></h5>
+            
+        </div>
+        <h5 id="pointsPlayer3"></h5>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/css/home.css" />

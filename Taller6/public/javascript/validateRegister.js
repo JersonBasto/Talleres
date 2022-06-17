@@ -36,7 +36,7 @@ async function enviarDatos(varJson) {
   }
   if(resJson.create){
     alert("Usuario creado");
-    window.location.replace("./users/login");
+    window.location.replace("./login");
   }
   else{
     alert("El username ya existe");

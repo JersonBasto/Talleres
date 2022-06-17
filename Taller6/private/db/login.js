@@ -1,11 +1,9 @@
 const connectDB = require("./db");
 const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 
 const router = require("express").Router();
 router.post("/loginUser", async (req, res) => {
-  console.log("Recibe: ");
-  console.log(req.body);
   let db;
   let user;
   let searchusername;
@@ -41,7 +39,11 @@ router.post("/loginUser", async (req, res) => {
           process.env.TOKEN_SECRET,
           { expiresIn: "15m" }
         );
-        res.json({mensaje:"Bienvenido "+searchusername.Name,token:token,login:true})
+        res.json({
+          mensaje: "Bienvenido " + searchusername.Name,
+          token: token,
+          login: true,
+        });
       }
     }
   } catch (error) {
