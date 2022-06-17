@@ -34,5 +34,11 @@ async function enviarDatos(varJson) {
   if(response.ok){
     var resJson = await response.json();
   }
-  console.log(resJson)
+  if(resJson.create){
+    alert("Usuario creado");
+    window.location.replace("./users/login");
+  }
+  else{
+    alert("El username ya existe");
+  }
 }

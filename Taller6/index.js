@@ -13,6 +13,7 @@ app.use(bodyparser.json());
 app.set("views", path.join(__dirname, "src/views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/register", require("./private/db/register"));
+app.use("/api/login", require("./private/db/login"));
 app.set("view engine", "hbs");
 
 const register = require("./src/routes/register");

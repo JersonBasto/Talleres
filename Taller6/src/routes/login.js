@@ -1,2 +1,5 @@
-const cool = (req, res) => {};
-module.exports = cool;
+const login = (req, res) => {
+    res.render("login.hbs",{titulo:"Login"});
+  };
+  
+  module.exports = login;
