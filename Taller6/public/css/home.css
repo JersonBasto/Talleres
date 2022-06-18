@@ -1,6 +1,7 @@
-body{
+body {
     background-color: rgb(186, 228, 250);
 }
+
 #containerP {
     padding: 10px;
     display: grid;
@@ -16,6 +17,7 @@ body{
 
 #containerHeader {
     grid-area: header;
+    align-items: center;
     display: flex;
     padding: 10px;
     border: black 1px solid;
@@ -64,7 +66,7 @@ body{
     grid-template-rows: repeat(1, fr);
     grid-template-areas: "player1 player2 player3";
     background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(148, 240, 244, 1) 98%);   
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(148, 240, 244, 1) 98%);
 }
 
 #logout {
@@ -74,6 +76,7 @@ body{
     font-size: 120%;
     border-radius: 10px;
     right: 0;
+    padding: 15px;
 }
 
 #spanJugador {
@@ -88,38 +91,86 @@ body{
 
 #celdaJugador {
     margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas:
+        "jugador apuesta select";
+}
+
+#celdaBoton {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas:
+        "boton";
 }
 
 #Jugador1 {
-    width: 20%;
+    grid-area: jugador;
+    height: 50%;
+    margin: 15px;
 }
 
 #Jugador2 {
-    width: 20%;
+    grid-area: jugador;
+    height: 50%;
+    margin: 15px;
 }
 
 #Jugador3 {
-    width: 20%;
+    grid-area: jugador;
+    height: 50%;
+    margin: 15px;
 }
 
 #Apuesta1 {
-    width: 20%;
+    grid-area: apuesta;
+    height: 50%;
+    margin: 15px;
 }
 
 #Apuesta2 {
-    width: 20%;
+    grid-area: apuesta;
+    height: 50%;
+    margin: 15px;
 }
 
 #Apuesta3 {
-    width: 20%;
+    grid-area: apuesta;
+    height: 50%;
+    margin: 15px;
+}
+
+#spanJugador {
+    grid-area: jugador;
+    height: 10px;
+}
+
+#spanApuesta {
+    grid-area: apuesta;
+    height: 50%;
 }
 
 #play {
     width: 50%;
-    height: 70%;
+    padding: 15px;
     text-align: center;
     margin: 0 auto;
     font-size: 120%;
+    grid-area: boton;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    border-color: #f44336;
+    color: red;
+    border-radius: 5px;
+}
+
+#play:hover {
+    background: #f44336;
+    color: white;
 }
 
 #dado1 {
@@ -144,6 +195,7 @@ body{
 
 #playDados {
     grid-area: boton;
+    content: "\01F3B2";
     width: 50%;
     height: 70%;
     text-align: center;
@@ -252,13 +304,77 @@ body{
 
 #playAgain {
     width: 50%;
-    height: 70%;
+    padding: 15px;
     text-align: center;
     margin: 0 auto;
     font-size: 120%;
+    grid-area: boton;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #f44336;
+    color: red;
+    border-radius: 5px;
+}
+
+#playAgain:hover {
+    background: #f44336;
+    color: white;
 }
 
 #logout:hover {
     background-color: rgb(216, 215, 215);
     cursor: hand;
+}
+
+#selectPlayer1 {
+    border: 2px solid black;
+    background-color: white;
+    padding: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #04AA6D;
+    color: green;
+    border-radius: 5px;
+    grid-area: select;
+}
+
+#selectPlayer1:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#selectPlayer2 {
+    border: 2px solid black;
+    background-color: white;
+    padding: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #04AA6D;
+    color: green;
+    border-radius: 5px;
+    grid-area: select;
+}
+
+#selectPlayer2:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#selectPlayer3 {
+    border: 2px solid black;
+    background-color: white;
+    padding: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #04AA6D;
+    color: green;
+    border-radius: 5px;
+    grid-area: select;
+}
+
+#selectPlayer3:hover {
+    background-color: #04AA6D;
+    color: white;
 }

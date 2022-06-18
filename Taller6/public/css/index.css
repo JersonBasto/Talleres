@@ -23,6 +23,17 @@ p {
     padding: 10px;
     border-color: rgb(171, 165, 165);
     border-radius: 10px;
+    transition: all 0.5s;
+}
+
+#BtnLogin:hover {
+    background-color: rgb(198, 188, 188);
+    padding-right: 25px;
+    transition: 0.5s;
+}
+
+#BtnLogin:after {
+    transition: 0.5s;
 }
 
 #BtnRegister {
@@ -30,12 +41,14 @@ p {
     padding: 10px;
     border-color: rgb(171, 165, 165);
     border-radius: 10px;
-}
-
-#BtnLogin:hover {
-    background-color: rgb(198, 188, 188);
+    transition: all 0.5s;
 }
 
 #BtnRegister:hover {
     background-color: rgb(198, 188, 188);
+    padding-right: 25px;
+    transition: 0.5s;
+}
+#BtnLogin:after {
+    transition: 0.5s;
 }

@@ -1,3 +1,7 @@
+/**
+ * @checkToken Se encarga de verificar que Token enviado por el front sea valido.
+ * Dependiendo de la respuesta da acceso a home o redirecciona a index
+ */
 async function checkToken() {
   let token = localStorage.getItem("token");
   let Bienvenido = document.getElementById("Bienvenido");
@@ -23,61 +27,166 @@ async function checkToken() {
     window.location.replace("/");
   }
 }
+/**
+ * Se inicia la funcion checkToken
+ */
 checkToken();
 
+/**
+ * Se declaran las variables globales y algunas con valor inicial
+ * Lanza los dados
+ * @playDados
+ */
 let playDados = document.getElementById("playDados");
+/**
+ * @play Inicia el juego
+ */
 let play = document.getElementById("play");
+/**
+ * @Jugador1 se toma las variables del jugador1
+ */
 let Jugador1 = document.getElementById("Jugador1");
+/**
+ * @player1 Se declara la variable global para pasar a funciones
+ */
 let player1;
+/**
+ * @player2 Se declara la variable global para pasar a funciones
+ */
 let player2;
+/**
+ * @player3 Se declara la variable global para pasar a funciones
+ */
 let player3;
+/**
+ * @readyPlayer Se declara la variable para determinar si los jugadores estan listos
+ */
 let readyPlayer = false;
+/**
+ * @selectPlayer1 Selecciona los datos del jugador a lanzar los dados
+ */
 let selectPlayer1 = document.getElementById("selectPlayer1");
+/**
+ * @selectPlayer2 Selecciona los datos del jugador a lanzar los dados
+ */
 let selectPlayer2 = document.getElementById("selectPlayer2");
+/**
+ * @selectPlayer3 Selecciona los datos del jugador a lanzar los dados
+ */
 let selectPlayer3 = document.getElementById("selectPlayer3");
+/**
+ * @select Esta variable guarda la variable player1,player2 o player3 para
+ * enviar a funciones.
+ */
 let select;
+/**
+ * @playAgain Toma la variable del boton jugar de nuevo
+ */
 let playAgain = document.getElementById("playAgain");
-let logout=document.getElementById("logout")
+/**
+ * Toma la variable del boton LOGOUT
+ */
+let logout = document.getElementById("logout");
 
-logout.addEventListener("click",()=>{
-    localStorage.setItem('token',"")
-    window.location.replace("/")
-})
+/**
+ * Borra el Token almacenado en el localStorage y direcciona al index
+ */
+logout.addEventListener("click", () => {
+  localStorage.setItem("token", "");
+  window.location.replace("/");
+});
 
+/**
+ * Cumple con la funcion de obtener los datos del jugador 1 el cual va lanzar los dados
+ */
 selectPlayer1.addEventListener("click", () => {
-  if (readyPlayer) {
-    if (Apuesta1.value == 0) {
-      alert("El jugador " + player1.getUsername() + " no ha hecho una apuesta");
+  if (player1.getSaldo() > 0) {
+    if (readyPlayer) {
+      if (Apuesta1.value == 0) {
+        alert(
+          "El jugador " + player1.getUsername() + " no ha hecho una apuesta"
+        );
+      } else {
+        if (player1.getSaldo() < Apuesta1.value) {
+          alert(
+            "El jugador " +
+              player1.getUsername() +
+              " no puede apostar mas del saldo restante"
+          );
+        } else {
+          select = player1;
+        }
+      }
     } else {
-      select = player1;
+      alert("No ha iniciado el juego");
     }
   } else {
-    alert("No ha iniciado el juego");
+    alert("No puede realizar apuesta su saldo es de 0 o esta debiendo");
+    Apuesta1.value=0;
   }
 });
+/**
+ * Cumple con la funcion de obtener los datos del jugador 2 el cual va lanzar los dados
+ */
 selectPlayer2.addEventListener("click", () => {
-  if (readyPlayer) {
-    if (Apuesta2.value == 0) {
-      alert("El jugador " + player2.getUsername() + " no ha hecho una apuesta");
+  if (player2.getSaldo() > 0) {
+    if (readyPlayer) {
+      if (Apuesta2.value == 0) {
+        alert(
+          "El jugador " + player2.getUsername() + " no ha hecho una apuesta"
+        );
+      } else {
+        if (player2.getSaldo() < Apuesta2.value) {
+          alert(
+            "El jugador " +
+              player2.getUsername() +
+              " no puede apostar mas del saldo restante"
+          );
+        } else {
+          select = player2;
+        }
+      }
     } else {
-      select = player2;
+      alert("No ha iniciado el juego");
     }
   } else {
-    alert("No ha iniciado el juego");
+    alert("No puede realizar apuesta su saldo es de 0 o esta debiendo");
+    Apuesta2.value=0;
   }
 });
+/**
+ * Cumple con la funcion de obtener los datos del jugador 3 el cual va lanzar los dados
+ */
 selectPlayer3.addEventListener("click", () => {
-  if (readyPlayer) {
-    if (Apuesta3.value == 0) {
-      alert("El jugador " + player3.getUsername() + " no ha hecho una apuesta");
+  if (player3.getSaldo() > 0) {
+    if (readyPlayer) {
+      if (Apuesta3.value == 0) {
+        alert(
+          "El jugador " + player3.getUsername() + " no ha hecho una apuesta"
+        );
+      } else {
+        if (player3.getSaldo() < Apuesta3.value) {
+          alert(
+            "El jugador " +
+              player3.getUsername() +
+              " no puede apostar mas del saldo restante"
+          );
+        } else {
+          select = player3;
+        }
+      }
     } else {
-      select = player3;
+      alert("No ha iniciado el juego");
     }
   } else {
-    alert("No ha iniciado el juego");
+    alert("No puede realizar apuesta su saldo es de 0 o esta debiendo");
+    Apuesta3.value=0;
   }
 });
-
+/**
+ * Inicia el juego validando la informacion escrita antes para su valoracion
+ * 
+ */
 play.addEventListener("click", () => {
   let Jugador1 = document.getElementById("Jugador1");
   let Jugador2 = document.getElementById("Jugador2");
@@ -111,24 +220,56 @@ play.addEventListener("click", () => {
     playAgain.style.visibility = "visible";
   }
 });
+/**
+ * Despues de iniciar el juego al click en el boton jugar de nuevo este valida informacion
+ * e inicia una nueva ronda
+ */
 playAgain.addEventListener("click", () => {
+  Apuesta1.value = 0;
+  Apuesta2.value = 0;
+  Apuesta3.value = 0;
   let winner = false;
+  checkSaldo();
   winner = selectWinner();
   if (winner) {
-    Apuesta1.value = 0;
-    Apuesta2.value = 0;
-    Apuesta3.value = 0;
     player1.setnumberOfPitches(0);
     player1.setPunctuation(0);
+    player1.getPlayerWinner();
     player2.setnumberOfPitches(0);
     player2.setPunctuation(0);
+    player2.getPlayerWinner();
     player3.setnumberOfPitches(0);
     player3.setPunctuation(0);
+    player3.getPlayerWinner();
     obtenerDatos();
   } else {
     alert("Todavia no hay ganador!");
+    player1.playerWinner(false);
+    player2.playerWinner(false);
+    player3.playerWinner(false);
   }
 });
+/**
+ * @checkSaldo Se encarga de verificar el saldo de cada jugador y determina si puede seguir jugando o no
+ */
+function checkSaldo(){
+  if(player1.getSaldo()<=0){
+    player1.setnumberOfPitches(11);
+    player1.setPunctuation(0);
+  } 
+  if(player2.getSaldo()<=0){
+    player2.setnumberOfPitches(11);
+    player2.setPunctuation(0);
+  }
+  if(player3.getSaldo()<=0){
+    player3.setnumberOfPitches(11);
+    player3.setPunctuation(0);
+  }
+}
+/**
+ * @playDados Al momento de hacer click en lanzar dados este se encarga de generar valores aleatorios
+ * y los envia a la clase throwDice
+ */
 
 playDados.addEventListener("click", () => {
   if (readyPlayer) {
@@ -148,7 +289,10 @@ playDados.addEventListener("click", () => {
     alert("No ha iniciado el juego");
   }
 });
-
+/**
+ * @Jugador Segun los datos ingresados al comienzo, crea objetos Jugador para cada jugador
+ * del juego
+ */
 class Jugador {
   constructor(username) {
     this.username = username;
@@ -157,6 +301,7 @@ class Jugador {
     this.saldo = 100;
     this.losses = 0;
     this.profits = 0;
+    this.winner=false;
   }
   getLosses() {
     return this.losses;
@@ -181,6 +326,12 @@ class Jugador {
   }
   setPunctuation(punctuation) {
     this.punctuation = punctuation;
+  }
+  playerWinner(winner){
+    this.winner=winner;
+  }
+  getPlayerWinner(){
+    return this.winner;
   }
   increaseNumberOfPitches() {
     if (this.numberOfPitches > 10) {
@@ -215,6 +366,10 @@ class Jugador {
     return this.saldo;
   }
 }
+/**
+ * @throwDice Es la encargada de determinar quien puede seguir lanzando los dados
+ * sin superar los 10 lanzamientos.
+ */
 class throwDice {
   throw(Jugador, varDado1, varDado2) {
     Jugador.increaseNumberOfPitches();
@@ -235,6 +390,9 @@ class throwDice {
     }
   }
 }
+/**
+ * @obtenerDatos Se encarga de obtener los datos y enviar a su respectivo lugar.
+ */
 function obtenerDatos() {
   saldoPlayer1.innerText = "Saldo: " + player1.getSaldo();
   saldoPlayer2.innerText = "Saldo: " + player2.getSaldo();
@@ -264,7 +422,10 @@ function obtenerDatos() {
     player3.getNumberOfPitches() +
     " lanzaminetos";
 }
-
+/**
+ * 
+ * @selectWinner Determina quien es el ganador de la ronda o del juegos.
+ */
 function selectWinner() {
   if (
     player1.getNumberOfPitches() > 10 &&
@@ -274,6 +435,7 @@ function selectWinner() {
     if (player1.getPunctuation() > player2.getPunctuation()) {
       if (player1.getPunctuation() > player3.getPunctuation()) {
         alert("Ha ganado el jugador " + player1.getUsername());
+        player1.playerWinner(true);
         player1.increaseBalance(
           parseInt(Apuesta2.value) + parseInt(Apuesta3.value)
         );
@@ -282,6 +444,7 @@ function selectWinner() {
         return true;
       } else {
         alert("Ha ganado el jugador " + player3.getUsername());
+        player3.playerWinner(true);
         player3.increaseBalance(
           parseInt(Apuesta1.value) + parseInt(Apuesta2.value)
         );
@@ -292,6 +455,7 @@ function selectWinner() {
     } else {
       if (player2.getPunctuation() > player3.getPunctuation()) {
         alert("Ha ganado el jugador " + player2.getUsername());
+        player2.playerWinner(true);
         player2.increaseBalance(
           parseInt(Apuesta1.value) + parseInt(Apuesta3.value)
         );
@@ -300,6 +464,7 @@ function selectWinner() {
         return true;
       } else {
         alert("Ha ganado el jugador " + player3.getUsername());
+        player3.playerWinner(true);
         player1.decreaseBalance(parseInt(Apuesta1.value));
         player2.decreaseBalance(parseInt(Apuesta2.value));
         player3.increaseBalance(

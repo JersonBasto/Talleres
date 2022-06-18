@@ -1,3 +1,6 @@
+/**
+ * btnRegisterRoute
+ */
 const btnRegisterRoute = document.getElementById("BtnRegister");
 
 const BtnLoginRoute = document.getElementById("BtnLogin");
