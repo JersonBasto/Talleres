@@ -1,3 +1,8 @@
+/**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
+ * @ButtonSend Capta los valores del buton Enviar, el cual es el encargado de enviar los datos a nuestro archivo que
+ * valida estos datos en la base de datos. 
+ */
 const ButtonSend = document.getElementById("ButtonSend");
 
 ButtonSend.addEventListener("click", () => {
@@ -14,7 +19,11 @@ ButtonSend.addEventListener("click", () => {
     } catch (error) {}
   }
 });
-
+/**
+ * 
+ * @param {*} varJson Recoge una variable llamada varJson la cual contiene los datos escritos por el usuario
+ * y los envia al archivo encargado de verificar la informacion del usuario y asi iniciar sesion.
+ */
 async function enviarDatos(varJson) {
   var response = await fetch("http://localhost:3000/api/login/loginUser", {
     method: "POST",

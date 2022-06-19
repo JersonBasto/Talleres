@@ -1,7 +1,15 @@
+/**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
+ * Se importa la funcion connectDB para realizar la conexion a la base de datos.
+ * Se importa jsonwebtoken encargado de crear el token de login.
+ * Se importa bcrypt encargado de Desencriptar la contraseña ingresada por el usuario.
+ */
 const connectDB = require("./db");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
+/**
+ * @param router Se encarga de realizar post a la base de datos.
+ */
 const router = require("express").Router();
 router.post("/loginUser", async (req, res) => {
   let db;

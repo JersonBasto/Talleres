@@ -1,9 +1,18 @@
+/**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
+ * @param MongoClient Se hace la conexion a la base de datos de mongoDB a traves de la libreria MongoClient
+ */
 const MongoClient = require('mongodb').MongoClient;
-const mongoose = require('mongoose');
 
+/**
+ * @param uri Se guarda la variable encargada de hacer la conexion con la base de datos.
+ */
 const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.ueatq.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`
 let connection
-// Conexión a Base de datos
+/**
+ * @param connectDB Hace la conexion con la base de datos y devuelve si logro conectarse o no a ella.
+ * @returns 
+ */
 async function connectDB() {
     if(connection) return connection
     let client
@@ -20,4 +29,7 @@ async function connectDB() {
     }
     return connection
 }
+/**
+ * Se exporta el modulo connectDB para ser usado por otros archivos.
+ */
 module.exports=connectDB;

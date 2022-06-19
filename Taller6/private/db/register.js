@@ -1,6 +1,13 @@
+/**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
+ * Se importa la funcion connectDB para realizar la conexion a la base de datos.
+ * Se importa bcrypt encargado de encriptar la contraseña ingresada por el usuario.
+ */
 const connectDB = require("./db");
 const bcrypt = require("bcrypt");
-
+/**
+ * @param router Se encarga de realizar put a la base de datos.
+ */
 const router = require("express").Router();
 router.put("/registerUser", async (req, res) => {
   console.log("Recibe: ");

@@ -1,4 +1,5 @@
 /**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
  * @checkToken Se encarga de verificar que Token enviado por el front sea valido.
  * Dependiendo de la respuesta da acceso a home o redirecciona a index
  */

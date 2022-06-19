@@ -1,3 +1,8 @@
+/**
+ * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
+ * @param ButtonSend Capta los valores del boton Enviar y verifica los datos ingresados por el usuario para un
+ * envio a la base datos.
+ */
 const ButtonSend = document.getElementById("ButtonSend");
 
 ButtonSend.addEventListener("click", () => {
@@ -20,7 +25,11 @@ ButtonSend.addEventListener("click", () => {
     } catch (error) {}
   }
 });
-
+/**
+ * 
+ * @param {*} varJson La variable varJson contiene los datos enviados por el usuario y los almacena dentro
+ * de la base de datos.
+ */
 async function enviarDatos(varJson) {
   var response = await fetch(
     "http://localhost:3000/api/register/registerUser",
