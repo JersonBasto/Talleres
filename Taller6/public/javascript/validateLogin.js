@@ -1,7 +1,7 @@
 /**
  * @author Jerson Daniel Basto Gil <jdbastog@correo.udistrital.edu.co>
  * @ButtonSend Capta los valores del buton Enviar, el cual es el encargado de enviar los datos a nuestro archivo que
- * valida estos datos en la base de datos. 
+ * valida estos datos en la base de datos.
  */
 const ButtonSend = document.getElementById("ButtonSend");
 
@@ -20,7 +20,7 @@ ButtonSend.addEventListener("click", () => {
   }
 });
 /**
- * 
+ *
  * @param {*} varJson Recoge una variable llamada varJson la cual contiene los datos escritos por el usuario
  * y los envia al archivo encargado de verificar la informacion del usuario y asi iniciar sesion.
  */
@@ -30,14 +30,16 @@ async function enviarDatos(varJson) {
     mode: "cors",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(varJson),
-  });
+  })
+  console.log(response);
   if (response.ok) {
     var resJson = await response.json();
+    console.log(resJson);
   }
   if (resJson.login) {
     alert(resJson.mensaje);
     localStorage.setItem("token", resJson.token);
-    window.location.replace("./home");
+    //window.location.replace("./home");
   } else {
     alert(resJson.mensaje);
   }
